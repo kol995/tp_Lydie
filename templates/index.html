@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TEST DE GLICEMIE</title>
+	<h1>Prediction du diabète</h1>
+	<link rel="stylesheet" type="text/css" rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+<body>
+	<div class="container" >
+		<div class="row">
+			<div class="col-lg-12">
+				<img src="{{url_for('static',filename='images/nn.jfif')}}" alt="Photo glasse">
+					<form action="{{url_for('predict')}}" method="post" id="contactForm">
+						<div class="col-lg-12">
+							<div class="col-lg-12">
+							<div class="form-group">
+								<input type="text" name="Pregnancies" placeholder="Pregnancies" id="Pregnancies" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="text" name="Glucose" placeholder="Glucose" id="Glucose" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="text" name="BloodPressure" placeholder="BloodPressure" id="BloodPressure" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="text" name="SkinThickness" placeholder="SkinThickness" id="SkinThickness" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="text" name="Insulin" placeholder="Insulin" id="Insulin" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="text" name="BMI" placeholder="BMI" id="BMI" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" id="DiabetesPedigreeFunction" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="text" name="Age" placeholder="Age" id="Age" class="form-control">
+							</div>
+							<div>
+								<button class="btn btn-common" id="submit" type="submit">Predire</button>
+							</div>
+						</div>
+						<h2>
+							{{prediction_text_}}
+						</h2>
+
+						</div>
+					</form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
